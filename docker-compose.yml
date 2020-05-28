@@ -14,7 +14,7 @@ services:
       - mysql
 
   mysql:
-    image: mysql:8.0.3
+    image: mariadb
     environment:
       MYSQL_ROOT_PASSWORD: root
     volumes:

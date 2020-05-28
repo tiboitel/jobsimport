@@ -3,6 +3,7 @@
 echo "START CONTAINER"
 echo "---------"
 docker-compose up -d
+sleep 2 # so that mysql has time to start
 echo
 
 echo "RUN APP"

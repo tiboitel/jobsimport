@@ -13,6 +13,7 @@ echo
 echo "INIT DB"
 echo "---------"
 docker-compose up -d
+sleep 2 # so that mysql has time to start
 docker-compose exec mysql /bin/bash -c "mysql -u root mysql < /var/app/init.sql && echo 'SQL file run.'"
 docker-compose kill
 echo
