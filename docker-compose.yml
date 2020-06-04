@@ -1,6 +1,17 @@
 version: "3.7"
 
 services:
+  app:
+    build: ./
+    #ports:
+    #  - 8080:80
+    volumes:
+      - ./src/:/var/app/src
+      - ./resources/:/var/app/resources
+    command: "php /var/app/src/app.php"
+    depends_on:
+      - mariadb
+
   mariadb:
     image: mariadb:10.4
     restart: always
