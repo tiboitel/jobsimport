@@ -11,7 +11,3 @@ CREATE TABLE `job` (
     `publication` date,
     PRIMARY KEY(`id`)
 );
-
-CREATE USER 'cmc_user'@'%' IDENTIFIED BY 'cmc_password';
-GRANT ALL ON `cmc_db`.* TO 'cmc_user'@'%';
-FLUSH PRIVILEGES;

@@ -5,5 +5,4 @@ echo "---------"
 docker-compose down --rmi all -v
 echo
 
-
 echo 'done.'

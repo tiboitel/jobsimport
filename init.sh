@@ -2,20 +2,11 @@
 
 echo "CREATE CONTAINERS"
 echo "---------"
-docker-compose build
+docker-compose up -d --force-recreate --remove-orphan
 echo
 
-#intermediate start/stop to prevent "ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock'" (not sure why this is needed...)
-docker-compose up -d
-docker-compose kill
-echo
-
-echo "INIT DB"
+echo "ENSURE SERVICES HAVE TIME TO START..."
 echo "---------"
-docker-compose up -d
-sleep 2 # so that mysql has time to start
-docker-compose exec mysql /bin/bash -c "mysql -u root mysql < /var/app/init.sql && echo 'SQL file run.'"
-docker-compose kill
-echo
+sleep 15
 
 echo 'done.'

@@ -5,9 +5,9 @@ Entry point of the project.
 To be run from the command line.
 ************************************/
 
-define('SQL_HOST', 'mysql');
-define('SQL_USER', 'cmc_user');
-define('SQL_PWD', 'cmc_password');
+define('SQL_HOST', 'mariadb');
+define('SQL_USER', 'root');
+define('SQL_PWD', 'root');
 define('SQL_DB', 'cmc_db');
 define('RESSOURCES_DIR', __DIR__ . '/../resources/');
 
